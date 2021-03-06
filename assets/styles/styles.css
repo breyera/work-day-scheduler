@@ -41,3 +41,25 @@
 .hero > p:last-child {
     margin-block-end: 2em;
 }
+
+div {
+    margin: 2rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 940px) {
+    body {
+        font-size: 12px;
+    }
+    .hero {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .btn, .saveBtn {
+        word-break: break-word;
+        font-size: 8px;
+        line-height: 8.2px;
+        font-weight: bolder;
+    }
+}
