@@ -47,6 +47,21 @@ div {
     padding: 1rem;
 }
 
+/* Colors for past, present and future */
+.past {
+    background-color: lightslategray;
+    color: white;
+} 
+.present {
+    background-color: aliceblue;
+    color: black;
+} 
+.future {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+/* styling for responsiveness */
 @media screen and (max-width: 940px) {
     body {
         font-size: 12px;
