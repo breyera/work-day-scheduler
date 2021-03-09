@@ -40,9 +40,9 @@ var scheduvarext;
 var eventTime;
 
 saveBtn.on("click", function() {
-    scheduvarext = $(this).siblings(".render").val();
+    scheduvarext = $(this).siblings(".render").children("input").val(); //input is child of .render class object
     console.log(scheduvarext);
-    eventTime = $(this).siblings(".hour").text();
+    eventTime = $(this).siblings("td").eq(0).text(); //.hour is on parent not sibling
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(scheduvarext));
 
@@ -52,9 +52,9 @@ saveBtn.on("click", function() {
 });
 
 devareBtn.on("click", function() {
-    scheduvarext = $(this).siblings(".render").val("");
-    scheduvarext = $(this).siblings(".render").val();
-    eventTime = $(this).siblings(".hour").text();
+    scheduvarext = $(this).siblings(".render").children("input").val("");
+    scheduvarext = $(this).siblings(".render").children("input").val();
+    eventTime = $(this).siblings("td").eq(0).text();
     localStorage.setItem(eventTime, JSON.stringify(scheduvarext));
 
     changeColor();
@@ -63,38 +63,38 @@ devareBtn.on("click", function() {
 
 function showText () {
     var saveText9 = JSON.parse(localStorage.getItem("9:00"));
-    $("#9").val("");
-    $("#9").val(saveText9);
+    $("#9").children().eq(0).val("");
+    $("#9").children().eq(0).val(saveText9);
 
     var saveText10 = JSON.parse(localStorage.getItem("10:00"));
-    $("#10").val("");
-    $("#10").val(saveText10);
+    $("#10").children().eq(0).val("");
+    $("#10").children().eq(0).val(saveText10);
 
     var saveText11 = JSON.parse(localStorage.getItem("11:00"));
-    $("#11").val("");
-    $("#11").val(saveText11);
+    $("#11").children().eq(0).val("");
+    $("#11").children().eq(0).val(saveText11);
 
     var saveText12 = JSON.parse(localStorage.getItem("12:00"));
-    $("#12").val("");
-    $("#12").val(saveText12);
+    $("#12").children().eq(0).val("");
+    $("#12").children().eq(0).val(saveText12);
 
     var saveText1 = JSON.parse(localStorage.getItem("1:00"));
-    $("#1").val("");
-    $("#1").val(saveText1);
+    $("#1").children().eq(0).val("");
+    $("#1").children().eq(0).val(saveText1);
 
     var saveText2 = JSON.parse(localStorage.getItem("2:00"));
-    $("#2").val("");
-    $("#2").val(saveText2);
+    $("#2").children().eq(0).val("");
+    $("#2").children().eq(0).val(saveText2);
 
     var saveText3 = JSON.parse(localStorage.getItem("3:00"));
-    $("#3").val("");
-    $("#3").val(saveText3);
+    $("#3").children().eq(0).val("");
+    $("#3").children().eq(0).val(saveText3);
 
     var saveText4 = JSON.parse(localStorage.getItem("4:00"));
-    $("#4").val("");
-    $("#4").val(saveText4);
+    $("#4").children().eq(0).val("");
+    $("#4").children().eq(0).val(saveText4);
 
     var saveText5 = JSON.parse(localStorage.getItem("5:00"));
-    $("#5").val("");
-    $("#5").val(saveText5);
+    $("#5").children().eq(0).val("");
+    $("#5").children().eq(0).val(saveText5);
 };
