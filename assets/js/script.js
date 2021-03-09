@@ -1,6 +1,6 @@
 const mom = moment();
 const saveBtn = $(".save-button");
-const devareBtn = $(".discard");
+const discardBtn = $(".discard");
 
 $("#currentDay").text("Today is " + moment().format('LLLL'));
 changeColor();
@@ -36,26 +36,26 @@ function changeColor() {
     });
 }
 
-var scheduvarext;
+var scheduledText;
 var eventTime;
 
 saveBtn.on("click", function() {
-    scheduvarext = $(this).siblings(".render").children("input").val(); //input is child of .render class object
-    console.log(scheduvarext);
+    scheduledText = $(this).siblings(".render").children("input").val(); //input is child of .render class object
+    console.log(scheduledText);
     eventTime = $(this).siblings("td").eq(0).text(); //.hour is on parent not sibling
     console.log(eventTime);
-    localStorage.setItem(eventTime, JSON.stringify(scheduvarext));
+    localStorage.setItem(eventTime, JSON.stringify(scheduledText));
 
     changeColor();
     showText();
 
 });
 
-devareBtn.on("click", function() {
-    scheduvarext = $(this).siblings(".render").children("input").val("");
-    scheduvarext = $(this).siblings(".render").children("input").val();
+discardBtn.on("click", function() {
+    scheduledText = $(this).siblings(".render").children("input").val("");
+    scheduledText = $(this).siblings(".render").children("input").val();
     eventTime = $(this).siblings("td").eq(0).text();
-    localStorage.setItem(eventTime, JSON.stringify(scheduvarext));
+    localStorage.setItem(eventTime, JSON.stringify(scheduledText));
 
     changeColor();
     showText();
